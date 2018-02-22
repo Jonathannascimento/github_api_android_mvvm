@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.br.agile_github.agilegithubapi.ui.searchUser.SearchUserViewModel">
+        </variable>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/holo_blue_light"
+            app:title="@string/txt_app_name"
+            app:titleTextColor="@android:color/white">
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topbar"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_hint_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity=""
+                android:text="@string/txt_username"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edt_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp"
+                android:hint="@string/hint_write_here"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="14sp" />
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_search_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/txt_search"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@android:color/holo_blue_light" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>
