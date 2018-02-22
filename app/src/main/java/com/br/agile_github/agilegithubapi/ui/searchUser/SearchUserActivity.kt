@@ -33,15 +33,11 @@ class SearchUserActivity : BaseActivity<ActivitySearchUserBinding, SearchUserVie
         })
 
         disposables.add(mViewModel.remoteErrors().subscribe {
-
+            mViewModel.dialogUtils.showAlertDialog(it.message!!, getString(R.string.txt_connection_error))
         })
 
-        disposables.add(mViewModel.localValidations().subscribe {
-
-        })
-
-        disposables.add(mViewModel.connectionErrors().subscribe {
-
+        disposables.add(mViewModel.fetchErrors().subscribe {
+            mViewModel.dialogUtils.showAlertDialog(it.message!!, getString(R.string.txt_default_error))
         })
     }
 

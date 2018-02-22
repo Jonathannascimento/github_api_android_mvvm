@@ -9,5 +9,6 @@ interface NetworkInteractor {
 
     fun hasNetworkConnectionCompletable(): Completable
 
-    class NetworkUnavailableException : Throwable("No network available!")
+    class NetworkUnavailableException : Throwable("A network error has occurred. Check your Internet connection   " +
+            "and try again later.")
 }

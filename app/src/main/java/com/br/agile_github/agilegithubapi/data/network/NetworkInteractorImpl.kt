@@ -20,5 +20,4 @@ class NetworkInteractorImpl @Inject constructor(
             } else {
                 Completable.error { NetworkInteractor.NetworkUnavailableException() }
             }
-
 }
