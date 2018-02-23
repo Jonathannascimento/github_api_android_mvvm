@@ -45,6 +45,10 @@ class UserRepositoryActivity : BaseActivity<ActivityUserRepositoryBinding, UserR
     }
 
     private fun setupAdapter(repository: List<Repository>) {
+
+        if (repository.isEmpty())
+            mDataBinding!!.txtEmptyRepositories.visibility = View.VISIBLE
+
         adapter.updateRepository(repository)
         mDataBinding!!.recyclerView.adapter = adapter
         mDataBinding!!.recyclerView.addItemDecoration(itemDividerDecoration)

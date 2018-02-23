@@ -1,14 +1,14 @@
 package com.br.agile_github.agilegithubapi.data.network
 
+import android.content.Context
 import android.net.ConnectivityManager
-import com.br.agile_github.agilegithubapi.data.network.NetworkInteractor
 import io.reactivex.Completable
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class NetworkInteractorImpl @Inject constructor(
-        private val connectivityManager: ConnectivityManager
+        private val connectivityManager: ConnectivityManager, private val context: Context
 ) : NetworkInteractor {
 
     override fun hasNetworkConnection(): Boolean =
@@ -18,6 +18,6 @@ class NetworkInteractorImpl @Inject constructor(
             if (hasNetworkConnection()) {
                 Completable.complete()
             } else {
-                Completable.error { NetworkInteractor.NetworkUnavailableException() }
+                Completable.error { NetworkInteractor.NetworkUnavailableException(context) }
             }
 }

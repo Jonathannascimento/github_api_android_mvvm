@@ -7,7 +7,7 @@ import com.br.agile_github.agilegithubapi.data.remote.GithubApi
 import com.br.agile_github.agilegithubapi.model.ErrorBodyRequisition
 import com.br.agile_github.agilegithubapi.model.User
 import com.br.agile_github.agilegithubapi.ui.base.BaseViewModel
-import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
 import io.reactivex.Completable
 import io.reactivex.Observable
@@ -19,8 +19,6 @@ import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
-import com.google.gson.GsonBuilder
-
 
 class SearchUserViewModel @Inject constructor(
         val apiService: GithubApi,

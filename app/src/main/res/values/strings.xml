@@ -12,4 +12,6 @@
     <string name="txt_connection_error">Connection error</string>
     <string name="txt_default_error">Error</string>
     <string name="txt_err_search_empty">The text can not be empty.</string>
+    <string name="txt_error_connection_message">A network error has occurred. Check your Internet connection
+    and try again later.</string>
 </resources>
