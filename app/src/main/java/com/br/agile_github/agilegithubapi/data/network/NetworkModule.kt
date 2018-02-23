@@ -1,9 +1,7 @@
-package io.github.plastix.kotlinboilerplate.data.network
+package com.br.agile_github.agilegithubapi.data.network
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.br.agile_github.agilegithubapi.data.network.NetworkInteractor
-import com.br.agile_github.agilegithubapi.data.network.NetworkInteractorImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

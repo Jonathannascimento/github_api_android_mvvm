@@ -1,18 +1,15 @@
 <resources>
     <string name="app_name">AgileGithubApi</string>
-    <string name="empty_resource">Nenhuma informação encontrada.</string>
-    <string name="txt_search">Pesquisar</string>
-    <string name="hint_write_here">Digite aqui.</string>
-    <string name="txt_username">Nome do usuário</string>
-    <string name="txt_empty_repositories">Nenhum repositório encontrado.</string>
-    <string name="err_txt_empty_username">Nome do usuário não pode ser vazio.</string>
-    <string name="err_txt_failure">Falha</string>
-    <string name="txt_no_contributors">Este repositório não tem contribuidores.</string>
-    <string name="txt_programming_language">Linguagens de Programação</string>
-    <string name="txt_contributors">Contribuidores</string>
-    <string name="txt_dialog_loading">Carregando…</string>
+    <string name="empty_resource">No content found.</string>
+    <string name="txt_search">Search</string>
+    <string name="hint_write_here">Type here.</string>
+    <string name="txt_username">username</string>
+    <string name="txt_empty_repositories">No Repository Found.</string>
+    <string name="err_txt_empty_username">Username can not be empty.</string>
+    <string name="err_txt_failure">Failure</string>
+    <string name="txt_dialog_loading">Loading…</string>
     <string name="txt_app_name">Agile - Github API</string>
-    <string name="txt_connection_error">Erro de conexão</string>
-    <string name="txt_default_error">Erro</string>
-    <string name="txt_err_search_empty">Mensagem não pode ser vazia.</string>
+    <string name="txt_connection_error">Connection error</string>
+    <string name="txt_default_error">Error</string>
+    <string name="txt_err_search_empty">The text can not be empty.</string>
 </resources>

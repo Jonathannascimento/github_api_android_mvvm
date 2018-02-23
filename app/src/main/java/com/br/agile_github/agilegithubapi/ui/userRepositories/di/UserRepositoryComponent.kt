@@ -9,5 +9,4 @@ import dagger.Subcomponent
 interface UserRepositoryComponent {
 
     fun injectTo(activity: UserRepositoryActivity)
-
 }

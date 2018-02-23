@@ -10,6 +10,7 @@ data class Repository(
         var id: Int? = null,
         var name: String? = null,
         var description: String? = null,
+        var language: String? = null,
 
         @SerializedName("full_name")
         var fullName: String? = null,

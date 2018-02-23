@@ -17,8 +17,8 @@ abstract class BaseActivity <B : ViewDataBinding, VM : BaseViewModel> : AppCompa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mDataBinding = DataBindingUtil.setContentView(this, initContentView())
         initInjector()
+        mDataBinding = DataBindingUtil.setContentView(this, initContentView())
         initUI()
         loadData()
     }

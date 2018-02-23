@@ -7,7 +7,7 @@ import com.br.agile_github.agilegithubapi.ui.searchUser.di.SearchUserModule
 import com.br.agile_github.agilegithubapi.ui.userRepositories.di.UserRepositoryComponent
 import com.br.agile_github.agilegithubapi.ui.userRepositories.di.UserRepositoryModule
 import dagger.Component
-import io.github.plastix.kotlinboilerplate.data.network.NetworkModule
+import com.br.agile_github.agilegithubapi.data.network.NetworkModule
 import javax.inject.Singleton
 
 @Singleton
