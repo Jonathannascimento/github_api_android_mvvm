@@ -1,17 +1,14 @@
 <resources>
     <string name="app_name">AgileGithubApi</string>
-    <string name="empty_resource">No content found.</string>
     <string name="txt_search">Search</string>
     <string name="hint_write_here">Type here.</string>
     <string name="txt_username">username</string>
     <string name="txt_empty_repositories">No Repository Found.</string>
-    <string name="err_txt_empty_username">Username can not be empty.</string>
-    <string name="err_txt_failure">Failure</string>
     <string name="txt_dialog_loading">Loading…</string>
     <string name="txt_app_name">Agile - Github API</string>
     <string name="txt_connection_error">Connection error</string>
     <string name="txt_default_error">Error</string>
-    <string name="txt_err_search_empty">The text can not be empty.</string>
+    <string name="txt_err_search_empty">Username can not be empty.</string>
     <string name="txt_error_connection_message">A network error has occurred. Check your Internet connection
     and try again later.</string>
     <string name="txt_empty_contributors">No matching contributors.</string>

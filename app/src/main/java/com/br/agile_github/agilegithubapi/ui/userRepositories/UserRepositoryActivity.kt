@@ -5,7 +5,6 @@ import android.view.View
 import com.br.agile_github.agilegithubapi.ProjectApplication
 import com.br.agile_github.agilegithubapi.R
 import com.br.agile_github.agilegithubapi.databinding.ActivityUserRepositoryBinding
-import com.br.agile_github.agilegithubapi.extensions.enableToolbarBackButton
 import com.br.agile_github.agilegithubapi.model.Repository
 import com.br.agile_github.agilegithubapi.model.User
 import com.br.agile_github.agilegithubapi.ui.base.BaseActivity
@@ -56,13 +55,17 @@ class UserRepositoryActivity : BaseActivity<ActivityUserRepositoryBinding, UserR
         return R.layout.activity_user_repository
     }
 
+    fun onBack(v: View) {
+        onBackPressed()
+    }
+
     /**
      * initiate ui configurations.
      */
     override fun initUI() {
         mDataBinding?.viewModel = mViewModel
-        setSupportActionBar(mDataBinding?.toolbar)
-        enableToolbarBackButton()
+//        setSupportActionBar(mDataBinding?.toolbar)
+//        enableToolbarBackButton()
         configureRequestRxResponse()
 
         mViewModel.fetchRepositories()

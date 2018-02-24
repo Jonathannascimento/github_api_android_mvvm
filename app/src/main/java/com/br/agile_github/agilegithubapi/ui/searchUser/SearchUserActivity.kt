@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_search_user.*
  * Activity that is responsible for the user search for your username.
  *
  */
-class SearchUserActivity : BaseActivity<ActivitySearchUserBinding, SearchUserViewModel>(), View.OnClickListener {
+class SearchUserActivity : BaseActivity<ActivitySearchUserBinding, SearchUserViewModel>() {
 
 
     /**
@@ -33,8 +33,14 @@ class SearchUserActivity : BaseActivity<ActivitySearchUserBinding, SearchUserVie
      * initiate ui configurations.
      */
     override fun initUI() {
-        btn_search_user.setOnClickListener(this)
         configureRequestRxResponse()
+    }
+
+    /**
+     * Search for a [User] by username
+     */
+    fun onLocalClick(v: View) {
+        mViewModel.fetchUser(edt_user_name.text.toString())
     }
 
     /**
@@ -62,13 +68,6 @@ class SearchUserActivity : BaseActivity<ActivitySearchUserBinding, SearchUserVie
         val intent = Intent(this, UserRepositoryActivity::class.java)
         intent.putExtra(Constants.USER_REPOSITORY_PARAM, user)
         startActivity(intent)
-    }
-
-    /**
-     * Search for a [User] by username
-     */
-    override fun onClick(v: View?) {
-        mViewModel.fetchUser(edt_user_name.text.toString())
     }
 
     /**

@@ -30,6 +30,7 @@
         <activity
             android:name=".ui.detailRepositories.DetailRepositoryActivity"
             android:parentActivityName=".ui.userRepositories.UserRepositoryActivity"
+            android:screenOrientation="portrait"
             android:launchMode="singleTop"/>
     </application>
 
