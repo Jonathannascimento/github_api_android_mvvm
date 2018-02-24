@@ -1,6 +1,7 @@
 package com.br.agile_github.agilegithubapi
 
-import android.app.Application
+import android.support.multidex.MultiDex
+import android.support.multidex.MultiDexApplication
 import com.br.agile_github.agilegithubapi.di.ApplicationComponent
 import com.br.agile_github.agilegithubapi.di.ApplicationModule
 import com.br.agile_github.agilegithubapi.di.DaggerApplicationComponent
@@ -8,7 +9,7 @@ import dagger.Lazy
 import timber.log.Timber
 import javax.inject.Inject
 
-class ProjectApplication : Application() {
+class ProjectApplication : MultiDexApplication() {
 
 
     @Inject
@@ -23,6 +24,8 @@ class ProjectApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        MultiDex.install(this)
 
         initDependencyGraph()
 

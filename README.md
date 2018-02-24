@@ -1,6 +1,6 @@
 # Github api Android Mvvm
 
-This project uses Mvvm, rxJava, Databind, dagger, retrofit to consume the github api
+This project was made in Kotlin and uses Mvvm, rxJava, Databind, dagger, retrofit to consume the github api
 
 ## Built With
 
