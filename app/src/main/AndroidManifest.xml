@@ -13,17 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.searchUser.SearchUserActivity"
+        <activity
+            android:name=".ui.searchUser.SearchUserActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.userRepositories.UserRepositoryActivity"
             android:parentActivityName=".ui.searchUser.SearchUserActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".ui.detailRepositories.DetailRepositoryActivity"
+            android:parentActivityName=".ui.userRepositories.UserRepositoryActivity"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

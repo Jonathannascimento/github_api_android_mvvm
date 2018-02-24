@@ -1,10 +1,14 @@
 package com.br.agile_github.agilegithubapi
 
+import android.app.Activity
 import android.app.Application
 import com.br.agile_github.agilegithubapi.di.ApplicationModule
 import com.br.agile_github.agilegithubapi.di.DaggerProjectApplicationComponent
 import com.br.agile_github.agilegithubapi.di.ProjectApplicationComponent
 import dagger.Lazy
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
 import timber.log.Timber
 import javax.inject.Inject
 

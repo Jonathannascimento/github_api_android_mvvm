@@ -9,5 +9,4 @@ import dagger.Subcomponent
 interface SearchUserComponent {
 
     fun injectTo(activity: SearchUserActivity)
-
 }

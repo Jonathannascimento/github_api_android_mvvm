@@ -27,23 +27,27 @@ class RepositoryAdapter @Inject constructor() : RecyclerView.Adapter<RepositoryA
         return RepositoryViewHolder(binding)
     }
 
-    fun updateRepository(repositories: List<Repository>) {
-        this.repositories = repositories
-    }
-
     override fun onBindViewHolder(holder: RepositoryViewHolder?, position: Int) {
 
         val binding = holder?.binding
         val repo = repositories[position]
-        var viewModel = binding?.viewModel
 
-        viewModel = RepositoryViewModel(repo)
+        val viewModel = RepositoryViewModel(repo)
         binding?.viewModel = viewModel
+
         holder?.setClickListener(itemClick)
     }
 
     override fun getItemCount(): Int {
         return repositories.size
+    }
+
+    fun setClickListener(itemClick: ((Repository) -> Unit)?) {
+        this.itemClick = itemClick
+    }
+
+    fun updateRepository(repositories : List<Repository>) {
+        this.repositories = repositories
     }
 
     class RepositoryViewHolder(val binding: ItemViewRepositoryBinding) : RecyclerView.ViewHolder(binding.root) {

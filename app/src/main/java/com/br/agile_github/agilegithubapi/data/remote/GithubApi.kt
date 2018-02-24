@@ -13,4 +13,7 @@ interface GithubApi {
 
     @GET("users/{username}/repos")
     fun getUserRepositories(@Path("username") user: String): Single<List<Repository>>
+
+    @GET("repos/{username}/{repository}/contributors")
+    fun getUserRepositoriesContributors(@Path("username") user: String, @Path("repository") repository: String): Single<List<User>>
 }

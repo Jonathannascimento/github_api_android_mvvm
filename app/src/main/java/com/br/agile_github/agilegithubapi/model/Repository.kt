@@ -15,7 +15,6 @@ data class Repository(
         @SerializedName("full_name")
         var fullName: String? = null,
 
-        @SerializedName("owner")
         var owner: User? = null
 
 ) : Parcelable {

@@ -10,12 +10,9 @@ import com.br.agile_github.agilegithubapi.ui.base.BaseActivity
 import com.br.agile_github.agilegithubapi.ui.searchUser.di.SearchUserModule
 import com.br.agile_github.agilegithubapi.ui.userRepositories.UserRepositoryActivity
 import com.br.agile_github.agilegithubapi.utils.Constants
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_search_user.*
 
 class SearchUserActivity : BaseActivity<ActivitySearchUserBinding, SearchUserViewModel>(), View.OnClickListener {
-
-    val disposables: CompositeDisposable = CompositeDisposable()
 
     override fun initContentView(): Int {
         return R.layout.activity_search_user

@@ -7,6 +7,7 @@ import com.br.agile_github.agilegithubapi.model.ErrorBodyRequisition
 import com.br.agile_github.agilegithubapi.model.Repository
 import com.br.agile_github.agilegithubapi.model.User
 import com.br.agile_github.agilegithubapi.ui.base.BaseViewModel
+import com.br.agile_github.agilegithubapi.utils.DialogUtils
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
 import io.reactivex.Observable
@@ -28,8 +29,6 @@ class UserRepositoryViewModel @Inject internal constructor(
     private var networkRequest: Disposable = Disposables.disposed()
 
     private var repos: BehaviorSubject<List<Repository>> = BehaviorSubject.create()
-    private val fetchErrors: PublishSubject<Throwable> = PublishSubject.create()
-    private val networkErrors: PublishSubject<Throwable> = PublishSubject.create()
 
     fun fetchRepositories() {
 
@@ -57,18 +56,6 @@ class UserRepositoryViewModel @Inject internal constructor(
     }
 
     fun getRepositories(): Observable<List<Repository>> = repos.hide()
-    fun remoteErrors(): Observable<Throwable> = networkErrors.hide()
-    fun fetchErrors(): Observable<Throwable> = fetchErrors.hide()
-
-    private fun getMessageErrorBody(e: Throwable): Throwable {
-
-        val error = e as HttpException
-        val erroBody = error.response().errorBody()?.string()
-        val bodyError: ErrorBodyRequisition = GsonBuilder().create().
-                fromJson(erroBody, ErrorBodyRequisition::class.java)
-
-        return Throwable(bodyError.message)
-    }
 
     @Bindable
     fun getUser() = user
