@@ -9,6 +9,12 @@ import com.br.agile_github.agilegithubapi.databinding.ItemViewRepositoryContribu
 import com.br.agile_github.agilegithubapi.model.User
 import javax.inject.Inject
 
+/**
+ * A group of *ui/detailRepositories/adapter*.
+ *
+ * adapter to show list of Contributors].
+ *
+ */
 class ContributorsAdapter @Inject constructor() : RecyclerView.Adapter<ContributorsAdapter.ContributorViewHolder>() {
 
     private var users: List<User> = emptyList()

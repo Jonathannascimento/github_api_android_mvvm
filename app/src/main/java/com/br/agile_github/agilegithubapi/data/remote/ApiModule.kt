@@ -7,6 +7,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+/**
+ * A group of *remote*.
+ *
+ * Module that provides a retrofit instance for classes that will make requests.
+ *
+ */
 @Module
 class ApiModule {
 

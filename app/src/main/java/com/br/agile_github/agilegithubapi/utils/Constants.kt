@@ -1,11 +1,14 @@
 package com.br.agile_github.agilegithubapi.utils
 
-class Constants {
+/**
+ * A group of *utils*.
+ *
+ * Default Constants from application
+ *
+ */
+object Constants {
 
-    companion object {
+    const val USER_REPOSITORY_PARAM = "user_repository_param"
+    const val USER_REPOSITORY_DETAIL_PARAM = "user_repository_detail_param"
 
-        val USER_REPOSITORY_PARAM = "user_repository_param"
-        val USER_REPOSITORY_DETAIL_PARAM = "user_repository_detail_param"
-
-    }
 }

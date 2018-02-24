@@ -4,7 +4,12 @@ import android.content.Context
 import com.br.agile_github.agilegithubapi.R
 import io.reactivex.Completable
 
-
+/**
+ * A group of *network*.
+ *
+ * This class is used to return if the device has internet or not
+ *
+ */
 interface NetworkInteractor {
 
     fun hasNetworkConnection(): Boolean

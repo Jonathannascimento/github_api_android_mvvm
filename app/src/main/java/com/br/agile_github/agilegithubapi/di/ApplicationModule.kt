@@ -10,6 +10,13 @@ import dagger.Provides
 import timber.log.Timber
 import javax.inject.Singleton
 
+/**
+ * A group of *di*.
+ *
+ * Module that provides some useful instances for the application, such as context and resources
+ *
+ * @property app the instance os applications to provides resources.
+ */
 @Module
 class ApplicationModule(private val app: ProjectApplication) {
 

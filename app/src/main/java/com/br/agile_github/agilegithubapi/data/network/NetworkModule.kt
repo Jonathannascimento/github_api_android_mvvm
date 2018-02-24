@@ -6,6 +6,13 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
+
+/**
+ * A group of *network*.
+ *
+ * Module that provides the instance of NetworkInteractor for use in the application
+ *
+ */
 @Module
 class NetworkModule {
 

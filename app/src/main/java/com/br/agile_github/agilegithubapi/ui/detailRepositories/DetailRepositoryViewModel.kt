@@ -5,7 +5,6 @@ import com.br.agile_github.agilegithubapi.data.remote.GithubApi
 import com.br.agile_github.agilegithubapi.model.Repository
 import com.br.agile_github.agilegithubapi.model.User
 import com.br.agile_github.agilegithubapi.ui.base.BaseViewModel
-import com.br.agile_github.agilegithubapi.utils.DialogUtils
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -15,6 +14,13 @@ import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
+/**
+ * A group of *ui/detailRepositories*.
+ *
+ * ViewModel from [DetailRepositoryActivity]
+ * has as dependencies the parameters of the constructor, because in this screen a request is made.
+ *
+ */
 class DetailRepositoryViewModel @Inject internal constructor(
         private val apiService: GithubApi,
         private val networkInteractor: NetworkInteractor,

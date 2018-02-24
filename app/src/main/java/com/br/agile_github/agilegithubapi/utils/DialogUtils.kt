@@ -1,14 +1,18 @@
 package com.br.agile_github.agilegithubapi.utils
 
 import android.app.Dialog
-import android.content.Context
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import com.br.agile_github.agilegithubapi.R
 import javax.inject.Inject
 
-
+/**
+ * A group of *utils*.
+ *
+ * Provides useful methods for using dialogs
+ *
+ */
 class DialogUtils @Inject constructor(context: AppCompatActivity) {
 
     val dialog: Dialog = Dialog(context)

@@ -8,6 +8,12 @@ import android.support.v7.widget.RecyclerView
 import com.br.agile_github.agilegithubapi.R
 import javax.inject.Inject
 
+/**
+ * A group of *utils*.
+ *
+ * Add Divides to List Items in [RecyclerView]
+ *
+ */
 class SimpleDividerItemDecoration @Inject constructor(
         context: Context
 ) : RecyclerView.ItemDecoration() {

@@ -1,24 +1,24 @@
 package com.br.agile_github.agilegithubapi
 
-import android.app.Activity
 import android.app.Application
+import com.br.agile_github.agilegithubapi.di.ApplicationComponent
 import com.br.agile_github.agilegithubapi.di.ApplicationModule
-import com.br.agile_github.agilegithubapi.di.DaggerProjectApplicationComponent
-import com.br.agile_github.agilegithubapi.di.ProjectApplicationComponent
+import com.br.agile_github.agilegithubapi.di.DaggerApplicationComponent
 import dagger.Lazy
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
 import timber.log.Timber
 import javax.inject.Inject
 
 class ProjectApplication : Application() {
 
+
     @Inject
     lateinit var debugTree: Lazy<Timber.DebugTree>
 
+    /**
+     * Provides a static instance of the application so you can inject the views
+     */
     companion object {
-        lateinit var graph: ProjectApplicationComponent
+        lateinit var graph: ApplicationComponent
     }
 
     override fun onCreate() {
@@ -26,14 +26,20 @@ class ProjectApplication : Application() {
 
         initDependencyGraph()
 
+        /**
+         * Betters Logs Started
+         */
         if (BuildConfig.DEBUG) {
             Timber.plant(debugTree.get())
         }
     }
 
+    /**
+     * Initiate Daggers injections
+     */
     private fun initDependencyGraph() {
 
-        graph = DaggerProjectApplicationComponent.builder().applicationModule(ApplicationModule(this))
+        graph = DaggerApplicationComponent.builder().applicationModule(ApplicationModule(this))
                 .build()
 
         graph.injectTo(this)

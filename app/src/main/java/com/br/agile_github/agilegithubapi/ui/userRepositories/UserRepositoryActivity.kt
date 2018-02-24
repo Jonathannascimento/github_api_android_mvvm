@@ -16,24 +16,49 @@ import com.br.agile_github.agilegithubapi.utils.Constants
 import com.br.agile_github.agilegithubapi.utils.SimpleDividerItemDecoration
 import javax.inject.Inject
 
+/**
+ * A group of *ui/userRepositories*.
+ *
+ * Activity that lists user repositories.
+ *
+ */
 class UserRepositoryActivity : BaseActivity<ActivityUserRepositoryBinding, UserRepositoryViewModel>() {
 
+    /**
+     * Inject Adapter to [UserRepositoryActivity].
+     */
     @Inject
     lateinit var adapter: RepositoryAdapter
 
+    /**
+     * Inject line divider to [UserRepositoryActivity].
+     */
     @Inject
     lateinit var itemDividerDecoration: SimpleDividerItemDecoration
 
+    /**
+     * create [lazy] variable to receive [User] from intent params.
+     */
     private val user by lazy { intent.getParcelableExtra<User>(Constants.USER_REPOSITORY_PARAM) }
 
+    /**
+     * Inject the current Activity
+     */
     override fun initInjector() {
         ProjectApplication.graph.injectSub(UserRepositoryModule(user, this)).injectTo(this)
     }
 
+    /**
+     * inflate the Activity.
+     * @return layout of current Activity.
+     */
     override fun initContentView(): Int {
         return R.layout.activity_user_repository
     }
 
+    /**
+     * initiate ui configurations.
+     */
     override fun initUI() {
         mDataBinding?.viewModel = mViewModel
         setSupportActionBar(mDataBinding?.toolbar)
@@ -43,6 +68,9 @@ class UserRepositoryActivity : BaseActivity<ActivityUserRepositoryBinding, UserR
         mViewModel.fetchRepositories()
     }
 
+    /**
+     * Configure [adapter].
+     */
     private fun setupAdapter(repository: List<Repository>) {
 
         if (repository.isEmpty())
@@ -57,6 +85,9 @@ class UserRepositoryActivity : BaseActivity<ActivityUserRepositoryBinding, UserR
         }
     }
 
+    /**
+     * Call [DetailRepositoryActivity].
+     */
     private fun callDetailActivity(repository: Repository) {
         val intent = Intent(this, DetailRepositoryActivity::class.java)
         intent.putExtra(Constants.USER_REPOSITORY_DETAIL_PARAM, repository)
@@ -64,6 +95,9 @@ class UserRepositoryActivity : BaseActivity<ActivityUserRepositoryBinding, UserR
         startActivity(intent)
     }
 
+    /**
+     * Method responsible for dealing with all events published during the request
+     */
     private fun configureRequestRxResponse() {
 
         disposables.add(mViewModel.getRepositories().subscribe {

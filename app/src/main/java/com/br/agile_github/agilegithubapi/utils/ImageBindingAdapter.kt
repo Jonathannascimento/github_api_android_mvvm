@@ -5,7 +5,12 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 
-
+/**
+ * A group of *utils*.
+ *
+ * Causes all images with bind imageUrl to be tagged
+ *
+ */
 class ImageBindingAdapter {
 
     companion object {

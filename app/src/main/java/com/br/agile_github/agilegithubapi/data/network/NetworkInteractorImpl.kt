@@ -6,6 +6,12 @@ import io.reactivex.Completable
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * A group of *network*.
+ *
+ * This class checks the user's connection to the internet
+ *
+ */
 @Singleton
 class NetworkInteractorImpl @Inject constructor(
         private val connectivityManager: ConnectivityManager, private val context: Context
@@ -14,6 +20,10 @@ class NetworkInteractorImpl @Inject constructor(
     override fun hasNetworkConnection(): Boolean =
             connectivityManager.activeNetworkInfo?.isConnectedOrConnecting ?: false
 
+    /**
+     * check Connection.
+     * @return Completable indicating that the requisition process may follow.
+     */
     override fun hasNetworkConnectionCompletable(): Completable =
             if (hasNetworkConnection()) {
                 Completable.complete()

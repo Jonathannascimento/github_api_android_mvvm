@@ -9,14 +9,32 @@ import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
+/**
+ * A group of *ui/base*.
+ *
+ * This classes
+ *
+ * @param B the current databind instance.
+ * @param VM the current viewModel from activity.
+ */
 open class BaseViewModel : BaseObservable() {
 
     @Inject
     lateinit var dialogUtils: DialogUtils
 
+    /**
+     * publishes API request and validation errors, as a user not found, or when a user types an empty username.
+     */
     protected val fetchErrors: PublishSubject<Throwable> = PublishSubject.create()
+
+    /**
+     * publishes internet errors.
+     */
     protected val networkErrors: PublishSubject<Throwable> = PublishSubject.create()
 
+    /**
+     * gets github API error message.
+     */
     protected fun getMessageErrorBody(e: Throwable): Throwable {
 
         if (e is HttpException) {

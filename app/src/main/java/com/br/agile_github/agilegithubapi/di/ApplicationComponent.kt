@@ -12,13 +12,20 @@ import com.br.agile_github.agilegithubapi.ui.userRepositories.di.UserRepositoryM
 import dagger.Component
 import javax.inject.Singleton
 
+
+/**
+ * A group of *di*.
+ *
+ * Main component of the application, provides the modules that will be used in the application
+ *
+ */
 @Singleton
 @Component(modules = arrayOf(
         ApplicationModule::class,
         NetworkModule::class,
         ApiModule::class
 ))
-interface ProjectApplicationComponent {
+interface ApplicationComponent {
 
     // Inject Modules
     fun injectTo(app: ProjectApplication)

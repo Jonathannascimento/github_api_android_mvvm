@@ -3,13 +3,9 @@ package com.br.agile_github.agilegithubapi.ui.userRepositories
 import android.databinding.Bindable
 import com.br.agile_github.agilegithubapi.data.network.NetworkInteractor
 import com.br.agile_github.agilegithubapi.data.remote.GithubApi
-import com.br.agile_github.agilegithubapi.model.ErrorBodyRequisition
 import com.br.agile_github.agilegithubapi.model.Repository
 import com.br.agile_github.agilegithubapi.model.User
 import com.br.agile_github.agilegithubapi.ui.base.BaseViewModel
-import com.br.agile_github.agilegithubapi.utils.DialogUtils
-import com.google.gson.GsonBuilder
-import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -17,19 +13,34 @@ import io.reactivex.disposables.Disposables
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
-import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
 
 
+/**
+ * A group of *ui/detailRepositories*.
+ *
+ * ViewModel from [UserRepositoryActivity]
+ * has as dependencies the parameters of the constructor, because in this screen a request is made.
+ *
+ */
 class UserRepositoryViewModel @Inject internal constructor(
         private val apiService: GithubApi,
         private val networkInteractor: NetworkInteractor,
         private val user: User) : BaseViewModel() {
 
+    /**
+     * Disposable to start request to return [Repository]s.
+     */
     private var networkRequest: Disposable = Disposables.disposed()
 
+    /**
+     * Behavior to be called when the user is found.
+     */
     private var repos: BehaviorSubject<List<Repository>> = BehaviorSubject.create()
 
+    /**
+     * Make [Repository] request.
+     */
     fun fetchRepositories() {
 
         networkRequest =
@@ -57,6 +68,9 @@ class UserRepositoryViewModel @Inject internal constructor(
 
     fun getRepositories(): Observable<List<Repository>> = repos.hide()
 
+    /**
+     * Bind [User] to [UserRepositoryActivity] xml.
+     */
     @Bindable
     fun getUser() = user
 }
